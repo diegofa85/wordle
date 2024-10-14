@@ -1,14 +1,20 @@
 import './App.css';
 import Square from './Square';
 import { useState } from 'react';
-const solution = 'CLASE';
+export const solution = 'CLASE';
+
+const replaceAt=function(cadena, index, char) {
+    var a = cadena.split("");
+    a[index] = char;
+    return a.join("");
+}
 
 function App() {
 
     const [currentAttempt, setCurrentAttempt] = useState(1);
     const [messageWinner, setMessageWinner] = useState("");
 
-    const guesses = [" ", " ", " ", " ", " "];
+    const guesses = ["     ", "     ", "     ", "     ", "     "];
 
     const handleSquareChange = (parameters) => {
 
@@ -36,6 +42,7 @@ function App() {
                 }
             }
         }
+    }
 
         return (
             <div className="App">
@@ -85,6 +92,6 @@ function App() {
                 </p>
             </div>
         );
-    }
 }
-    export default App;
+
+export default App;
